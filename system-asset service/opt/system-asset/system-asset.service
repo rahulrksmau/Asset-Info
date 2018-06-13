@@ -1,0 +1,19 @@
+[Unit]
+Description=Asset Service to access system hardware and software information
+DefaultDependencies=no
+#Wants=network.target # network is required
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/system-asset
+ExecStart=/opt/system-asset/asset
+ExecReload=/opt/system-asset/asset
+Restart=always
+RestartSec=10   # Restart service after 10 seconds if dotnet service crashes
+SyslogIdentifier=system-asset-logs
+User=root
+Group=root
+PrivateTmp=true
+
+[Install]
+WantedBy = multi-user.target

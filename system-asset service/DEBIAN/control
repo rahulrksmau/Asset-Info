@@ -1,0 +1,9 @@
+Package: system-asset
+Architecture: amd64
+Depends: libcurl4-openssl-dev
+Description: Collect system software and hardware information.
+Installed-Size: 20
+Maintainer: eMudhra <noreply@emudhra.com>
+Priority: extra
+Section: misc
+Version: 1.0.0

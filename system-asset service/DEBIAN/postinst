@@ -1,0 +1,6 @@
+#!/bin/sh
+echo "After Installation..."
+sudo cp -fr /opt/system-asset/system-asset.service /etc/systemd/system/
+systemctl daemon-reload 
+sudo systemctl enable system-asset.service
+sudo systemctl start system-asset.service

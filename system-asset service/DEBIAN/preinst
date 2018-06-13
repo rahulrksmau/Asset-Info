@@ -1,0 +1,14 @@
+#!/bin/sh
+echo "system-asset installing..."
+FILE_PATH="/opt/system-asset/"
+if [ -d "$FILE_PATH" ]
+then
+    pkill -f system-asset
+    systemctl --no-reload disable --now system-asset.service
+    sudo rm -rf /etc/systemd/system/system-asset.service
+    sudo rm -rf /opt/system-asset
+else
+    echo "$FILE_PATH not present"
+	sudo apt-get install libcurl4-openssl-dev
+fi	
+echo "pre-checking complete"

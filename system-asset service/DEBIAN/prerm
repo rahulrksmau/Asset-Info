@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "system-asset removing..."
+systemctl --no-reload disable --now system-asset.service
+sudo rm -rf /etc/systemd/system/system-asset.service
+sudo rm -rf /opt/system-asset/
